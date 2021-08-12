@@ -38,6 +38,7 @@ dev_dependencies:
     sdk: flutter
   json_serializable: ^4.1.4
   mocktail: ^0.1.4
+  network_image_mock: ^2.0.1
   very_good_analysis: ^2.3.0
 
 # For information on the generic Dart part of this file, see the

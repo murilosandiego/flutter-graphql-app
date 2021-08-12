@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-const _path = 'test/fixtures';
+const _path = 'test/helpers/fixtures';
 
 Map<String, dynamic> getHomeDataFixture() => _readFixture('home_data.json');
 

@@ -5,8 +5,7 @@ import 'package:nuconta_marketplace/application/usecases/remote_get_home_data.da
 
 import 'package:test/test.dart';
 
-import '../../fixtures/fixtures.dart';
-import '../../mocks/mocks.dart';
+import '../../helpers/helpers.dart';
 
 class GraphQLClientMock extends Mock implements IGraphQLClient {}
 

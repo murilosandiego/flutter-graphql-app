@@ -4,7 +4,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:nuconta_marketplace/domain/usecases/usecases.dart';
 import 'package:nuconta_marketplace/ui/pages/pages.dart';
 
-import '../../../../mocks/mocks.dart';
+import '../../../../helpers/helpers.dart';
 
 class GetHomeDataMock extends Mock implements GetHomeData {}
 
@@ -27,7 +27,6 @@ void main() {
   blocTest<HomeCubit, HomeState>(
     'Should call getHomeData once when getData is called',
     build: () => sut,
-    act: (cubit) => cubit.getData(),
     verify: (_) {
       verify(() => getHomeData()).called(1);
     },

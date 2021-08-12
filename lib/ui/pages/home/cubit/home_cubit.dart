@@ -8,7 +8,9 @@ part 'home_state.dart';
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit({
     required this.getHomeData,
-  }) : super(const HomeState.loading());
+  }) : super(const HomeState.loading()) {
+    getData();
+  }
 
   final GetHomeData getHomeData;
 
