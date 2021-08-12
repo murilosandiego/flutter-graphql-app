@@ -15,8 +15,8 @@ class RemoteGetHomeData extends GetHomeData {
   @override
   Future<CustomerEntity> call() async {
     final result = await graphQLClient.query(document: document);
-    // ignore: avoid_dynamic_calls
-    final customerRaw = result?['data']['viewer'] as Map<String, dynamic>;
+
+    final customerRaw = result?['viewer'] as Map<String, dynamic>;
     return CustomerModel.fromJson(customerRaw).toEntity();
   }
 }
