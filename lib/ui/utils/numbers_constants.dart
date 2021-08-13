@@ -4,6 +4,6 @@ abstract class NumbersConstants {
   static const double kComponentSpacer32 = 32;
   static const double imageHomeHeight = 130;
   static const double containerImageHomeHeight = 150;
-  static const double bottomSheetHeightFactor = 0.8;
-  static const double bottomSheetImageHeight = 300;
+  static const double bottomSheetHeightFactor = 0.85;
+  static const double bottomSheetImageHeight = 250;
 }

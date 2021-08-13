@@ -68,11 +68,14 @@ class _HomePage extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(NumbersConstants.kComponentSpacer16),
+        padding: const EdgeInsets.symmetric(
+          horizontal: NumbersConstants.kComponentSpacer16,
+        ),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: NumbersConstants.kComponentSpacer16),
               Text(
                 StringConstants.balance,
                 style: theme.textTheme.headline6,

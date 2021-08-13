@@ -11,7 +11,6 @@ Future<void> showOfferBottomSheet({
     context: context,
     builder: (BuildContext context) {
       final theme = Theme.of(context);
-
       return FractionallySizedBox(
         heightFactor: NumbersConstants.bottomSheetHeightFactor,
         child: Padding(
