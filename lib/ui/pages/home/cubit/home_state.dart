@@ -1,6 +1,6 @@
 part of 'home_cubit.dart';
 
-enum HomeStatus { loading, success, error }
+enum HomeStatus { loading, loaded, error }
 
 class HomeState extends Equatable {
   const HomeState._({
@@ -10,9 +10,9 @@ class HomeState extends Equatable {
 
   const HomeState.loading() : this._();
 
-  const HomeState.success(CustomerEntity customerEntity)
+  const HomeState.loaded(CustomerEntity customerEntity)
       : this._(
-          status: HomeStatus.success,
+          status: HomeStatus.loaded,
           customerEntity: customerEntity,
         );
 

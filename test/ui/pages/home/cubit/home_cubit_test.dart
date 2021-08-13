@@ -25,7 +25,7 @@ void main() {
   });
 
   blocTest<HomeCubit, HomeState>(
-    'Should call getHomeData once when getData is called',
+    'Should call getHomeData once when HomeCubit is build',
     build: () => sut,
     verify: (_) {
       verify(() => getHomeData()).called(1);
@@ -33,7 +33,7 @@ void main() {
   );
 
   blocTest<HomeCubit, HomeState>(
-    'Should emits [HomeState.loading HomeState.success] on success',
+    'Should emits [HomeState.loading HomeState.loaded] on success',
     setUp: () {
       mockSuccessGetHomeData();
     },
@@ -41,7 +41,7 @@ void main() {
     act: (cubit) => cubit.getData(),
     expect: () => [
       const HomeState.loading(),
-      const HomeState.success(tCustomerEntity),
+      const HomeState.loaded(tCustomerEntity),
     ],
   );
 

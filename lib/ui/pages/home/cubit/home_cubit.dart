@@ -20,7 +20,7 @@ class HomeCubit extends Cubit<HomeState> {
 
       final customerEntity = await getHomeData();
 
-      emit(HomeState.success(customerEntity));
+      emit(HomeState.loaded(customerEntity));
     } catch (e) {
       emit(const HomeState.error());
     }
