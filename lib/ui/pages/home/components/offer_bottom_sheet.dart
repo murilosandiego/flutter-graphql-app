@@ -57,7 +57,7 @@ Future<void> showOfferBottomSheet({
                           offerId: offerEntity!.id,
                         );
                       },
-                      child: const Text(StringConstants.purchase),
+                      child: const Text(StringConstants.buyNow),
                     ),
                   )
                 ],

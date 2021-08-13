@@ -74,7 +74,7 @@ void main() {
         (listView.evaluate().first.widget as ListView).semanticChildCount, 2);
     // ignore: use_raw_strings
     expect(find.text('R\$ 1.000.000,00'), findsOneWidget);
-    expect(find.text('Olá, Jerry Smith'), findsOneWidget);
+    expect(find.text('Hi, Jerry Smith'), findsOneWidget);
 
     // ignore: use_raw_strings
     expect(find.text('R\$ 5.000,00'), findsOneWidget);
@@ -97,7 +97,7 @@ void main() {
     await tester.tap(inkWell.first);
     await tester.pumpAndSettle();
 
-    expect(find.text(StringConstants.purchase), findsOneWidget);
+    expect(find.text(StringConstants.buyNow), findsOneWidget);
     expect(find.text('${tCustomerEntity.offers?[0].product?.description}'),
         findsOneWidget);
   });

@@ -19,7 +19,23 @@ class HomePage extends StatelessWidget {
       listenWhen: (_, current) =>
           current.status == HomeStatus.purchaseFailure ||
           current.status == HomeStatus.purchaseSuccess,
-      listener: (_, state) {},
+      listener: (_, state) {
+        if (state.status == HomeStatus.purchaseSuccess) {
+          showAlertDialog(
+            context: context,
+            title: StringConstants.successfulPurchase,
+            contentText: StringConstants.yourSuccessfulPurchase,
+          );
+        }
+
+        if (state.status == HomeStatus.purchaseFailure) {
+          showAlertDialog(
+            context: context,
+            title: StringConstants.errorAtCheckout,
+            contentText: state.errorMessage,
+          );
+        }
+      },
       buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
         if (state.status == HomeStatus.loading) {
