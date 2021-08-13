@@ -38,7 +38,7 @@ void main() {
       mockSuccessGetHomeData();
     },
     build: () => sut,
-    act: (cubit) => cubit.getData(),
+    act: (cubit) => cubit.handleGetHomeData(),
     expect: () => [
       const HomeState.loading(),
       const HomeState.loaded(tCustomerEntity),
@@ -51,7 +51,7 @@ void main() {
       mockErrorGetHomeData();
     },
     build: () => sut,
-    act: (cubit) => cubit.getData(),
+    act: (cubit) => cubit.handleGetHomeData(),
     expect: () => [
       const HomeState.loading(),
       const HomeState.error(),

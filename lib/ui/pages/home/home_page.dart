@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
               children: [
                 const Text(StringConstants.errorWhenFetchingData),
                 ElevatedButton(
-                  onPressed: cubit.getData,
+                  onPressed: cubit.handleGetHomeData,
                   child: const Text(StringConstants.tryAgain),
                 ),
               ],

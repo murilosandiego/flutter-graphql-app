@@ -45,7 +45,7 @@ void main() {
 
   testWidgets('should render correctly when HomeStatus.error', (tester) async {
     when(() => homeCubit.state).thenReturn(const HomeState.error());
-    when(() => homeCubit.getData()).thenAnswer((_) async => [null]);
+    when(() => homeCubit.handleGetHomeData()).thenAnswer((_) async => [null]);
 
     await _loadPage(tester);
 
@@ -54,7 +54,7 @@ void main() {
     expect(find.byType(Scaffold), findsNothing);
 
     await tester.tap(find.byType(ElevatedButton));
-    verify(() => homeCubit.getData()).called(1);
+    verify(() => homeCubit.handleGetHomeData()).called(1);
   });
 
   testWidgets('should render correctly when HomeStatus.loaded', (tester) async {

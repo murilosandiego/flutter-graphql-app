@@ -9,12 +9,12 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit({
     required this.getHomeData,
   }) : super(const HomeState.loading()) {
-    getData();
+    handleGetHomeData();
   }
 
   final GetHomeData getHomeData;
 
-  Future<void> getData() async {
+  Future<void> handleGetHomeData() async {
     try {
       emit(const HomeState.loading());
 
