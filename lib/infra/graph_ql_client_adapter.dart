@@ -23,5 +23,13 @@ class GraphQLClientAdapter implements IGraphQLClient {
   Future<Map<String, dynamic>?> mutate({
     required String document,
     Map<String, dynamic>? variables,
-  }) async {}
+  }) async {
+    final options = MutationOptions(
+      document: gql(document),
+      variables: variables ?? const <String, dynamic>{},
+    );
+
+    final result = await client.mutate(options);
+    return result.data;
+  }
 }

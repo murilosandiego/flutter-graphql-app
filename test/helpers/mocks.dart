@@ -1,4 +1,8 @@
+import 'package:mocktail/mocktail.dart';
+import 'package:nuconta_marketplace/application/graph_ql/graph_ql.dart';
 import 'package:nuconta_marketplace/domain/entities/entities.dart';
+
+class GraphQLClientMock extends Mock implements IGraphQLClient {}
 
 const tCustomerEntity = CustomerEntity(
   id: 'cccc3f48-dd2c-43ba-b8de-8945e7ababab',

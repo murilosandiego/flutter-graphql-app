@@ -1,13 +1,10 @@
 import 'package:faker/faker.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:nuconta_marketplace/application/graph_ql/graph_ql_client.dart';
 import 'package:nuconta_marketplace/application/usecases/remote_get_home_data.dart';
 
 import 'package:test/test.dart';
 
 import '../../helpers/helpers.dart';
-
-class GraphQLClientMock extends Mock implements IGraphQLClient {}
 
 void main() {
   late RemoteGetHomeData sut;

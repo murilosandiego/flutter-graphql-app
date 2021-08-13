@@ -1,0 +1,9 @@
+{
+  "purchase": {
+    "errorMessage": null,
+    "success": true,
+    "customer": {
+      "balance": 995000
+    }
+  }
+}
