@@ -101,7 +101,7 @@ void main() {
     );
 
     blocTest<HomeCubit, HomeState>(
-      '''Should emits [HomeState.loading HomeState.success] when purchase is successful''',
+      '''Should emits [HomeState.loading HomeState.purchaseSuccess] when purchase is successful''',
       setUp: () {
         mockPurchaseProductSuccess();
       },
@@ -110,7 +110,7 @@ void main() {
       act: (cubit) => cubit.handlePurchaseProduct(offerId: offerId),
       expect: () => [
         const HomeState(customerEntity: tCustomerEntity),
-        HomeState.success(tCustomerEntityUpdated),
+        HomeState.purchaseSuccess(tCustomerEntityUpdated),
       ],
     );
 

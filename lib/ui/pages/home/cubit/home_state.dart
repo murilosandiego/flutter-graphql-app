@@ -1,6 +1,12 @@
 part of 'home_cubit.dart';
 
-enum HomeStatus { loading, success, error, purchaseFailure }
+enum HomeStatus {
+  loading,
+  success,
+  error,
+  purchaseSuccess,
+  purchaseFailure,
+}
 
 class HomeState extends Equatable {
   const HomeState({
@@ -14,6 +20,12 @@ class HomeState extends Equatable {
   const HomeState.success(CustomerEntity? customerEntity)
       : this(
           status: HomeStatus.success,
+          customerEntity: customerEntity,
+        );
+
+  const HomeState.purchaseSuccess(CustomerEntity? customerEntity)
+      : this(
+          status: HomeStatus.purchaseSuccess,
           customerEntity: customerEntity,
         );
 

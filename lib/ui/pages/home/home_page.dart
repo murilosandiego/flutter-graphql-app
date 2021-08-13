@@ -15,7 +15,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final cubit = BlocProvider.of<HomeCubit>(context);
 
-    return BlocBuilder<HomeCubit, HomeState>(
+    return BlocConsumer<HomeCubit, HomeState>(
+      listenWhen: (_, current) =>
+          current.status == HomeStatus.purchaseFailure ||
+          current.status == HomeStatus.purchaseSuccess,
+      listener: (_, state) {},
       buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
         if (state.status == HomeStatus.loading) {
@@ -81,11 +85,16 @@ class _HomePage extends StatelessWidget {
                 style: theme.textTheme.headline6,
               ),
               const SizedBox(height: NumbersConstants.kComponentSpacer16),
-              Text(
-                '${customerEntity?.balance?.toDouble().toCurrency}',
-                style: theme.textTheme.headline5?.copyWith(
-                  fontWeight: FontWeight.w700,
-                ),
+              BlocSelector<HomeCubit, HomeState, int?>(
+                selector: (state) => state.customerEntity?.balance,
+                builder: (context, balance) {
+                  return Text(
+                    '${balance?.toDouble().toCurrency}',
+                    style: theme.textTheme.headline5?.copyWith(
+                      fontWeight: FontWeight.w700,
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: NumbersConstants.kComponentSpacer16),
               const Divider(),

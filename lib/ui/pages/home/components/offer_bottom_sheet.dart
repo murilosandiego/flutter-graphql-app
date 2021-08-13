@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nuconta_marketplace/domain/entities/entities.dart';
+import 'package:nuconta_marketplace/ui/pages/pages.dart';
 import 'package:nuconta_marketplace/ui/utils/utils.dart';
 
 Future<void> showOfferBottomSheet({
@@ -11,6 +13,8 @@ Future<void> showOfferBottomSheet({
     context: context,
     builder: (BuildContext context) {
       final theme = Theme.of(context);
+      final homeCubit = BlocProvider.of<HomeCubit>(context);
+
       return FractionallySizedBox(
         heightFactor: NumbersConstants.bottomSheetHeightFactor,
         child: Padding(
@@ -47,7 +51,12 @@ Future<void> showOfferBottomSheet({
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                        homeCubit.handlePurchaseProduct(
+                          offerId: offerEntity!.id,
+                        );
+                      },
                       child: const Text(StringConstants.purchase),
                     ),
                   )

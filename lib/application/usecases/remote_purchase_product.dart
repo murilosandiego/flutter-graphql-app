@@ -14,7 +14,7 @@ class RemotePurchaseProduct implements PurchaseProduct {
   final IGraphQLClient graphQLClient;
 
   @override
-  Future<int?> call({required String offerId}) async {
+  Future<int?> call({required String? offerId}) async {
     final result = await graphQLClient.mutate(
       document: document,
       variables: <String, dynamic>{KeyConstants.offerId: offerId},

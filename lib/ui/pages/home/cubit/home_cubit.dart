@@ -30,7 +30,7 @@ class HomeCubit extends Cubit<HomeState> {
     }
   }
 
-  Future<void> handlePurchaseProduct({required String offerId}) async {
+  Future<void> handlePurchaseProduct({required String? offerId}) async {
     try {
       emit(state.copyWith(status: HomeStatus.loading));
 
@@ -41,7 +41,7 @@ class HomeCubit extends Cubit<HomeState> {
 
       emit(
         state.copyWith(
-          status: HomeStatus.success,
+          status: HomeStatus.purchaseSuccess,
           customerEntity: customerEntityUpdated,
         ),
       );

@@ -25,10 +25,12 @@ void main() {
 
   Future _loadPage(WidgetTester tester) async {
     await mockNetworkImagesFor(() async {
-      await tester.pumpApp(
+      await tester.pumpWidget(
         BlocProvider<HomeCubit>.value(
           value: homeCubit,
-          child: const HomePage(),
+          child: const MaterialApp(
+            home: HomePage(),
+          ),
         ),
       );
     });
