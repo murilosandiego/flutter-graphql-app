@@ -82,4 +82,21 @@ void main() {
     expect(find.text('R\$ 999.999.999,00'), findsOneWidget);
     expect(find.text('Mr. Meeseeks Box'), findsOneWidget);
   });
+
+  testWidgets('Should show the bottom sheet when it is touched on the offer',
+      (tester) async {
+    when(() => homeCubit.state)
+        .thenReturn(const HomeState.success(tCustomerEntity));
+
+    await _loadPage(tester);
+
+    final inkWell = find.byType(InkWell);
+
+    await tester.tap(inkWell.first);
+    await tester.pumpAndSettle();
+
+    expect(find.text(StringConstants.purchase), findsOneWidget);
+    expect(find.text('${tCustomerEntity.offers?[0].product?.description}'),
+        findsOneWidget);
+  });
 }
