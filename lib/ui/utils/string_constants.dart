@@ -1,6 +1,6 @@
 abstract class StringConstants {
-  static const String errorWhenFetchingData = 'Erro ao buscar dados';
-  static const String tryAgain = 'Tentar novamente';
+  static const String errorWhenFetchingData = 'An unexpected error occurred';
+  static const String tryAgain = 'Reload';
   static const String hello = 'Hi';
   static const String balance = 'Balance';
   static const String offers = 'Offers';

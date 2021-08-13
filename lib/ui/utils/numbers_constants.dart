@@ -6,4 +6,5 @@ abstract class NumbersConstants {
   static const double containerImageHomeHeight = 150;
   static const double bottomSheetHeightFactor = 0.85;
   static const double bottomSheetImageHeight = 250;
+  static const double toolbarHeight = 100;
 }

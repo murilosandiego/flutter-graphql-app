@@ -83,6 +83,7 @@ class _HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: NumbersConstants.toolbarHeight,
         title: Text(
           '${StringConstants.hello}, ${customerEntity?.name}',
         ),
