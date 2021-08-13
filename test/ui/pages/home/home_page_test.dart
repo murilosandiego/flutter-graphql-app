@@ -90,6 +90,9 @@ void main() {
     when(() => homeCubit.state)
         .thenReturn(const HomeState.success(tCustomerEntity));
 
+    when(() => homeCubit.handlePurchaseProduct(offerId: any(named: 'offerId')))
+        .thenAnswer((_) async => [null]);
+
     await _loadPage(tester);
 
     final inkWell = find.byType(InkWell);
@@ -100,5 +103,13 @@ void main() {
     expect(find.text(StringConstants.buyNow), findsOneWidget);
     expect(find.text('${tCustomerEntity.offers?[0].product?.description}'),
         findsOneWidget);
+
+    await tester.tap(find.text(StringConstants.buyNow));
+    await tester.pumpAndSettle();
+
+    verify(
+      () => homeCubit.handlePurchaseProduct(
+          offerId: tCustomerEntity.offers?[0].id),
+    ).called(1);
   });
 }
