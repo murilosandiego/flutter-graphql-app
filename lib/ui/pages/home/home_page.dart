@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nuconta_marketplace/domain/entities/customer_entity.dart';
-import 'package:nuconta_marketplace/domain/entities/offer_entity.dart';
+import 'package:nuconta_marketplace/domain/entities/entities.dart';
+import 'package:nuconta_marketplace/ui/pages/home/components/components.dart';
 import 'package:nuconta_marketplace/ui/pages/home/cubit/home_cubit.dart';
 import 'package:nuconta_marketplace/ui/utils/utils.dart';
 
@@ -97,10 +98,10 @@ class _HomePage extends StatelessWidget {
                 itemCount:
                     customerEntity?.offers?.length ?? NumbersConstants.kZero,
                 itemBuilder: (context, index) {
-                  final offer = customerEntity?.offers?[index];
+                  final offerEntity = customerEntity?.offers?[index];
 
                   return _OfferTile(
-                    offer: offer,
+                    offerEntity: offerEntity,
                   );
                 },
               )
@@ -115,17 +116,20 @@ class _HomePage extends StatelessWidget {
 class _OfferTile extends StatelessWidget {
   const _OfferTile({
     Key? key,
-    required this.offer,
+    required this.offerEntity,
   }) : super(key: key);
 
-  final OfferEntity? offer;
+  final OfferEntity? offerEntity;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
     return InkWell(
-      onTap: () {},
+      onTap: () => showOfferBottomSheet(
+        context: context,
+        offerEntity: offerEntity,
+      ),
       child: Row(
         children: [
           Container(
@@ -134,7 +138,7 @@ class _OfferTile extends StatelessWidget {
               right: NumbersConstants.kComponentSpacer16,
             ),
             child: Image.network(
-              '${offer?.product?.image}',
+              '${offerEntity?.product?.image}',
               fit: BoxFit.cover,
               height: NumbersConstants.imageHomeHeight,
             ),
@@ -143,11 +147,11 @@ class _OfferTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '${offer?.product?.name}',
+                '${offerEntity?.product?.name}',
                 textAlign: TextAlign.center,
               ),
               Text(
-                '${offer?.price?.toDouble().toCurrency}',
+                '${offerEntity?.price?.toDouble().toCurrency}',
                 style: theme.textTheme.headline6?.copyWith(
                   fontWeight: FontWeight.w700,
                 ),

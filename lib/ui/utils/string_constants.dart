@@ -4,4 +4,5 @@ abstract class StringConstants {
   static const hello = 'Olá';
   static const balance = 'Saldo';
   static const offers = 'Ofertas';
+  static const purchase = 'Comprar';
 }
