@@ -22,4 +22,18 @@ class CustomerEntity extends Equatable {
         name,
         offers,
       ];
+
+  CustomerEntity copyWith({
+    String? id,
+    int? balance,
+    String? name,
+    List<OfferEntity>? offers,
+  }) {
+    return CustomerEntity(
+      id: id ?? this.id,
+      balance: balance ?? this.balance,
+      name: name ?? this.name,
+      offers: offers ?? this.offers,
+    );
+  }
 }

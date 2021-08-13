@@ -17,8 +17,8 @@ abstract class Routes {
   static BlocProvider<HomeCubit> _makeHomePage(BuildContext context) {
     return BlocProvider(
       create: (BuildContext context) => HomeCubit(
-        getHomeData: makeRemoteGetHomeData(),
-      ),
+          getHomeData: makeRemoteGetHomeData(),
+          purchaseProduct: makeRemotePurchaseProduct()),
       child: const HomePage(),
     );
   }

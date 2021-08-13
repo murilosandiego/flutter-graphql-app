@@ -57,9 +57,10 @@ void main() {
     verify(() => homeCubit.handleGetHomeData()).called(1);
   });
 
-  testWidgets('should render correctly when HomeStatus.loaded', (tester) async {
+  testWidgets('should render correctly when HomeStatus.success',
+      (tester) async {
     when(() => homeCubit.state)
-        .thenReturn(const HomeState.loaded(tCustomerEntity));
+        .thenReturn(const HomeState.success(tCustomerEntity));
 
     await _loadPage(tester);
 
@@ -85,7 +86,7 @@ void main() {
   testWidgets('Should show the bottom sheet when it is touched on the offer',
       (tester) async {
     when(() => homeCubit.state)
-        .thenReturn(const HomeState.loaded(tCustomerEntity));
+        .thenReturn(const HomeState.success(tCustomerEntity));
 
     await _loadPage(tester);
 
