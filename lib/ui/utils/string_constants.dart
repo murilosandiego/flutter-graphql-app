@@ -10,4 +10,5 @@ abstract class StringConstants {
       'Your purchase was successful :)';
 
   static const String errorAtCheckout = 'Error at checkout';
+  static const String ok = 'ok';
 }

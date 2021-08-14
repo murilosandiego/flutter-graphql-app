@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nuconta_marketplace/ui/utils/string_constants.dart';
 
 Future<void> showAlertDialog({
   required BuildContext context,
@@ -24,7 +25,7 @@ Future<void> showAlertDialog({
             onPressed: () {
               Navigator.of(context).pop();
             },
-            child: const Text('OK'),
+            child: Text(StringConstants.ok.toUpperCase()),
           ),
         ],
       );
