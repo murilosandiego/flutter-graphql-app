@@ -19,6 +19,22 @@ void main() {
     registerFallbackValue<Request>(RequestFake());
   });
 
+  void mockSuccess(Map<String, dynamic>? data) => when(
+        () => link.request(any()),
+      ).thenAnswer(
+        (_) => Stream.fromIterable([
+          Response(
+            data: data,
+            context: const Context().withEntry(
+              const HttpLinkResponseContext(
+                statusCode: 200,
+                headers: {'foo': 'bar'},
+              ),
+            ),
+          ),
+        ]),
+      );
+
   setUp(() {
     link = LinkMock();
 
@@ -31,21 +47,7 @@ void main() {
   });
 
   test('Should call query method with correct values', () async {
-    when(
-      () => link.request(any()),
-    ).thenAnswer(
-      (_) => Stream.fromIterable([
-        Response(
-          data: getHomeDataFixture(),
-          context: const Context().withEntry(
-            const HttpLinkResponseContext(
-              statusCode: 200,
-              headers: {'foo': 'bar'},
-            ),
-          ),
-        ),
-      ]),
-    );
+    mockSuccess(getHomeDataFixture());
 
     final data = await sut.query(
       document: DocumentsConstants.getHomeData,
@@ -65,23 +67,9 @@ void main() {
   });
 
   test('Should call mutate method with correct values', () async {
-    when(
-      () => link.request(any()),
-    ).thenAnswer(
-      (_) => Stream.fromIterable([
-        Response(
-          data: getPurchaseSuccessFixture(),
-          context: const Context().withEntry(
-            const HttpLinkResponseContext(
-              statusCode: 200,
-              headers: {'foo': 'bar'},
-            ),
-          ),
-        ),
-      ]),
-    );
+    mockSuccess(getPurchaseSuccessFixture());
 
-    final variables = {'offerId': 'offer/portal-gun'};
+    const variables = {'offerId': 'offer/portal-gun'};
 
     final data = await sut.mutate(
       document: DocumentsConstants.mutationPurchaseProduct,
