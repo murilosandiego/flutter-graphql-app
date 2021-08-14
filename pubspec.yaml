@@ -36,6 +36,8 @@ dev_dependencies:
   faker: ^2.0.0
   flutter_test:
     sdk: flutter
+  integration_test:
+    sdk: flutter
   json_serializable: ^4.1.4
   mocktail: ^0.1.4
   network_image_mock: ^2.0.1
