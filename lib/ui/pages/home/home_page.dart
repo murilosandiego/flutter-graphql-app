@@ -192,6 +192,7 @@ class _OfferTile extends StatelessWidget {
                 '${offerEntity?.price?.toDouble().toCurrency}',
                 style: theme.textTheme.headline6?.copyWith(
                   fontWeight: FontWeight.w700,
+                  fontSize: NumbersConstants.fontSizeBalanceTile,
                 ),
               ),
             ],

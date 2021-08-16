@@ -7,4 +7,5 @@ abstract class NumbersConstants {
   static const double bottomSheetHeightFactor = 0.85;
   static const double bottomSheetImageHeight = 250;
   static const double toolbarHeight = 100;
+  static const double fontSizeBalanceTile = 18;
 }
