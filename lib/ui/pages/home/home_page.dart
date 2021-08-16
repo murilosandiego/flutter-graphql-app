@@ -170,6 +170,15 @@ class _OfferTile extends StatelessWidget {
               '${offerEntity?.product?.image}',
               fit: BoxFit.cover,
               height: NumbersConstants.imageHomeHeight,
+              loadingBuilder: (_, child, loadingProgress) =>
+                  loadingProgress == null
+                      ? child
+                      : const SizedBox(
+                          height: NumbersConstants.imageHomeHeight,
+                          child: Center(
+                            child: CircularProgressIndicator(),
+                          ),
+                        ),
             ),
           ),
           Column(
