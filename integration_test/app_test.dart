@@ -4,8 +4,6 @@ import 'package:integration_test/integration_test.dart';
 import 'package:nuconta_marketplace/main.dart';
 
 void main() {
-  setUp(() {});
-
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   testWidgets('App Integration test', (WidgetTester tester) async {
@@ -32,6 +30,7 @@ void main() {
 
     await tester.pumpAndSettle(const Duration(seconds: 1));
 
+    expect(find.text(r'R$ 995.000,00'), findsOneWidget);
     expect(find.byType(AlertDialog), findsOneWidget);
     expect(find.text('Successful purchase'), findsOneWidget);
     expect(find.text('Your purchase was successful :)'), findsOneWidget);
@@ -49,5 +48,6 @@ void main() {
     await tester.pumpAndSettle(const Duration(seconds: 1));
 
     expect(find.text('Error at checkout'), findsOneWidget);
+    expect(find.text("You don't have that much money."), findsOneWidget);
   });
 }
