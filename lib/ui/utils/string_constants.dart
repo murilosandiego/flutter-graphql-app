@@ -1,4 +1,5 @@
 abstract class StringConstants {
+  static const String appName = 'NuConta Marketplace';
   static const String errorWhenFetchingData = 'An unexpected error occurred';
   static const String tryAgain = 'Reload';
   static const String hello = 'Hi';
@@ -8,7 +9,6 @@ abstract class StringConstants {
   static const String successfulPurchase = 'Successful purchase';
   static const String yourSuccessfulPurchase =
       'Your purchase was successful :)';
-
   static const String errorAtCheckout = 'Error at checkout';
   static const String ok = 'ok';
 }
