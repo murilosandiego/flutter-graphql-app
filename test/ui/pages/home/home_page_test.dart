@@ -72,16 +72,13 @@ void main() {
     expect(listView, findsOneWidget);
     expect(
         (listView.evaluate().first.widget as ListView).semanticChildCount, 2);
-    // ignore: use_raw_strings
-    expect(find.text('R\$ 1.000.000,00'), findsOneWidget);
+    expect(find.text(r'R$ 1.000.000,00'), findsOneWidget);
     expect(find.text('Hi, Jerry Smith'), findsOneWidget);
 
-    // ignore: use_raw_strings
-    expect(find.text('R\$ 5.000,00'), findsOneWidget);
+    expect(find.text(r'R$ 5.000,00'), findsOneWidget);
     expect(find.text('Portal Gun'), findsOneWidget);
 
-    // ignore: use_raw_strings
-    expect(find.text('R\$ 999.999.999,00'), findsOneWidget);
+    expect(find.text(r'R$ 999.999.999,00'), findsOneWidget);
     expect(find.text('Mr. Meeseeks Box'), findsOneWidget);
   });
 
