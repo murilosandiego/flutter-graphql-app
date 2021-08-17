@@ -1,16 +1,21 @@
-# nuconta_marketplace
+# NuConta Marketplace
 
-A new Flutter project.
+This application was developed using a well-defined and decoupled architecture, following TDD (test-driven programming) as a working methodology, Clean Architecture to make the distribution of responsibilities in layers, following the SOLID principles and applying Design Patterns to solve some common problems.
 
-## Getting Started
+### I suggest running on the latest stable version (2.2.3) of Flutter.  
 
-This project is a starting point for a Flutter application.
+```
+flutter pub get
+flutter run
+```
+### Unit test
 
-A few resources to get you started if this is your first Flutter project:
+```
+flutter test
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Integration test
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+flutter drive --driver=test_driver/integration_test.dart --target=integration_test/app_test.dart
+```
