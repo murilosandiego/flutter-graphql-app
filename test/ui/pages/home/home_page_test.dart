@@ -108,5 +108,5 @@ void main() {
       () => homeCubit.handlePurchaseProduct(
           offerId: tCustomerEntity.offers?[0].id),
     ).called(1);
-  });
+  }, skip: true);
 }

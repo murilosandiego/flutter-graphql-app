@@ -16,8 +16,6 @@ class PurchaseResponseModel extends Equatable {
   factory PurchaseResponseModel.fromJson(Map<String, dynamic> json) =>
       _$PurchaseResponseModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$PurchaseResponseModelToJson(this);
-
   final String? errorMessage;
   final bool? success;
   final CustomerModel? customer;

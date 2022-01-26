@@ -15,8 +15,6 @@ class OfferModel {
   factory OfferModel.fromJson(Map<String, dynamic> json) =>
       _$OfferModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$OfferModelToJson(this);
-
   final String? id;
   final int? price;
   final ProductModel? product;

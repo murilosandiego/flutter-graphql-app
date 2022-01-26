@@ -16,8 +16,6 @@ class CustomerModel {
   factory CustomerModel.fromJson(Map<String, dynamic> json) =>
       _$CustomerModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CustomerModelToJson(this);
-
   final String? id;
   final int? balance;
   final String? name;
