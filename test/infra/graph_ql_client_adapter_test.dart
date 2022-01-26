@@ -1,8 +1,8 @@
 import 'package:graphql/client.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:nuconta_marketplace/infra/graph_ql_client_adapter.dart';
 import 'package:nuconta_marketplace/main/utils/documents.dart';
 import 'package:test/test.dart';
-import 'package:nuconta_marketplace/infra/graph_ql_client_adapter.dart';
 
 import '../helpers/fixtures/fixtures.dart';
 

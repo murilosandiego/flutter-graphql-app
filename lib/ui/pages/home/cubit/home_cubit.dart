@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:nuconta_marketplace/domain/entities/customer_entity.dart';
 import 'package:nuconta_marketplace/domain/errors/errors.dart';
-import 'package:nuconta_marketplace/domain/usecases/get_home_data.dart';
 import 'package:nuconta_marketplace/domain/usecases/usecases.dart';
 
 part 'home_state.dart';

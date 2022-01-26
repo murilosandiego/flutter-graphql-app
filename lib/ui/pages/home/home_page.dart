@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nuconta_marketplace/domain/entities/customer_entity.dart';
 import 'package:nuconta_marketplace/domain/entities/entities.dart';
 import 'package:nuconta_marketplace/ui/pages/home/components/components.dart';
 import 'package:nuconta_marketplace/ui/pages/home/cubit/home_cubit.dart';

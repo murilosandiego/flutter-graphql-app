@@ -4,7 +4,6 @@ const _primaryColor = Color(0xFF820BD1);
 
 ThemeData makeAppTheme() => ThemeData(
       primaryColor: _primaryColor,
-      accentColor: _primaryColor,
       colorScheme: const ColorScheme.light(
         primary: _primaryColor,
         secondary: _primaryColor,

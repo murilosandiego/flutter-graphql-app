@@ -1,10 +1,10 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:faker/faker.dart';
-import 'package:nuconta_marketplace/domain/errors/errors.dart';
-import 'package:test/test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:nuconta_marketplace/domain/errors/errors.dart';
 import 'package:nuconta_marketplace/domain/usecases/usecases.dart';
 import 'package:nuconta_marketplace/ui/pages/pages.dart';
+import 'package:test/test.dart';
 
 import '../../../../helpers/helpers.dart';
 
