@@ -24,6 +24,6 @@ flutter drive --driver=test_driver/integration_test.dart --target=integration_te
 ```
 
 
-[ci_badge]: https://github.com/murilosandiego/flutter-graphql-app/workflows/flutter-graphql-app/badge.svg
+[ci_badge]: https://github.com/murilosandiego/flutter-graphql-app/workflows/graphql_app/badge.svg
 [ci_link]: https://github.com/murilosandiego/flutter-graphql-app/actions
 [coverage_badge]: https://raw.githubusercontent.com/murilosandiego/flutter-graphql-app/main/coverage_badge.svg
