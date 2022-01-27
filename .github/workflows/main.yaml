@@ -30,7 +30,7 @@ jobs:
           min_coverage: 70
           exclude: '*.g.dart'
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
