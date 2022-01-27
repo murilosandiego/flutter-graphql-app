@@ -3,7 +3,7 @@ on: push
 
 jobs:
   build:
-    uses: murilosandiego/very_good_workflows/.github/workflows/flutter_package.yml@v1
+    uses: murilosandiego/very_good_workflows/.github/workflows/flutter_package.yml
     with:
       coverage_excludes: "*.g.dart"
       min_coverage: 70
