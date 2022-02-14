@@ -16,7 +16,7 @@ void main() {
   void mockPurchaseSuccess() => when(
         () => graphQLClient.mutate(
             document: any(named: 'document'),
-            variables: any(named: 'variables')),
+            variables: any(named: 'variables'),),
       ).thenAnswer(
         (_) async => getPurchaseSuccessFixture(),
       );
@@ -24,7 +24,7 @@ void main() {
   void mockPurchaseFailure() => when(
         () => graphQLClient.mutate(
             document: any(named: 'document'),
-            variables: any(named: 'variables')),
+            variables: any(named: 'variables'),),
       ).thenAnswer(
         (_) async => getPurchaseFailureFixture(),
       );
@@ -32,7 +32,7 @@ void main() {
   void mockThrowGraphQLExpcetion() => when(
         () => graphQLClient.mutate(
             document: any(named: 'document'),
-            variables: any(named: 'variables')),
+            variables: any(named: 'variables'),),
       ).thenThrow(Exception());
 
   setUp(() {

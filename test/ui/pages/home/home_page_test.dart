@@ -6,6 +6,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:network_image_mock/network_image_mock.dart';
 import 'package:nuconta_marketplace/ui/pages/pages.dart';
 import 'package:nuconta_marketplace/ui/utils/utils.dart';
+
 import '../home/../../../helpers/helpers.dart';
 
 class HomeCubitMock extends MockCubit<HomeState> implements HomeCubit {}
@@ -16,7 +17,7 @@ void main() {
   late HomeCubitMock homeCubit;
 
   setUpAll(() {
-    registerFallbackValue<HomeState>(HomeStateFake());
+    registerFallbackValue(HomeStateFake());
   });
 
   setUp(() {
@@ -71,7 +72,7 @@ void main() {
     final listView = find.byType(ListView);
     expect(listView, findsOneWidget);
     expect(
-        (listView.evaluate().first.widget as ListView).semanticChildCount, 2);
+        (listView.evaluate().first.widget as ListView).semanticChildCount, 2,);
     expect(find.text(r'R$ 1.000.000,00'), findsOneWidget);
     expect(find.text('Hi, Jerry Smith'), findsOneWidget);
 
@@ -99,14 +100,14 @@ void main() {
 
     expect(find.text(StringConstants.buyNow), findsOneWidget);
     expect(find.text('${tCustomerEntity.offers?[0].product?.description}'),
-        findsOneWidget);
+        findsOneWidget,);
 
     await tester.tap(find.text(StringConstants.buyNow));
     await tester.pumpAndSettle();
 
     verify(
       () => homeCubit.handlePurchaseProduct(
-          offerId: tCustomerEntity.offers?[0].id),
+          offerId: tCustomerEntity.offers?[0].id,),
     ).called(1);
-  }, skip: true);
+  }, skip: true,);
 }

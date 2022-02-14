@@ -1,7 +1,8 @@
-include: package:very_good_analysis/analysis_options.2.3.0.yaml
+include: package:very_good_analysis/analysis_options.2.4.0.yaml
 linter:
   rules:
     public_member_api_docs: false
     unnecessary_string_interpolations: false
+    one_member_abstracts: false
 analyzer:
   exclude: [build/**, lib/**.freezed.dart, lib/**.g.dart]

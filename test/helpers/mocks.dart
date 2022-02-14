@@ -18,7 +18,7 @@ const tCustomerEntity = CustomerEntity(
           description:
               'The Portal Gun is a gadget that allows the user(s) to travel between different universes/dimensions/realities.',
           image:
-              'https://vignette.wikia.nocookie.net/rickandmorty/images/5/55/Portal_gun.png/revision/latest/scale-to-width-down/310?cb=20140509065310'),
+              'https://vignette.wikia.nocookie.net/rickandmorty/images/5/55/Portal_gun.png/revision/latest/scale-to-width-down/310?cb=20140509065310',),
     ),
     OfferEntity(
       id: 'offer/mr-meeseeks-box',
@@ -30,7 +30,7 @@ const tCustomerEntity = CustomerEntity(
               // ignore: lines_longer_than_80_chars
               'The Mr. Meeseeks Box is a gadget that creates a Mr. Meeseeks for the purpose of completing one given objective.',
           image:
-              'https://vignette.wikia.nocookie.net/rickandmorty/images/f/f7/Mr._Meeseeks_Box.png/revision/latest/scale-to-width-down/310?cb=20160909153718'),
+              'https://vignette.wikia.nocookie.net/rickandmorty/images/f/f7/Mr._Meeseeks_Box.png/revision/latest/scale-to-width-down/310?cb=20160909153718',),
     )
   ],
 );

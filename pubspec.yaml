@@ -18,30 +18,29 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.14.0 <3.0.0"
 
 dependencies:
-  bloc: ^7.0.0
-  cupertino_icons: ^1.0.2
+  bloc: ^8.0.2
   equatable: ^2.0.3
   flutter:
     sdk: flutter
-  flutter_bloc: ^7.1.0
+  flutter_bloc: ^8.0.1
   graphql: ^5.0.0
-  json_annotation: ^4.0.1
+  json_annotation: ^4.4.0
 
 dev_dependencies:
-  bloc_test: ^8.1.0
-  build_runner: ^2.1.1
+  bloc_test: ^9.0.2
+  build_runner: ^2.1.7
   faker: ^2.0.0
   flutter_test:
     sdk: flutter
   integration_test:
     sdk: flutter
-  json_serializable: ^4.1.4
-  mocktail: ^0.1.4
+  json_serializable: ^6.1.4
+  mocktail: ^0.2.0
   network_image_mock: ^2.0.1
-  very_good_analysis: ^2.3.0
+  very_good_analysis: ^2.4.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

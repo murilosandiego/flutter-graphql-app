@@ -16,7 +16,7 @@ void main() {
   late LinkMock link;
 
   setUpAll(() {
-    registerFallbackValue<Request>(RequestFake());
+    registerFallbackValue(RequestFake());
   });
 
   void mockSuccess(Map<String, dynamic>? data) => when(

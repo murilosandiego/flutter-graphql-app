@@ -48,7 +48,7 @@ class HomeCubit extends Cubit<HomeState> {
       emit(state.copyWith(
         status: HomeStatus.purchaseFailure,
         errorMessage: e.message,
-      ));
+      ),);
     } catch (e) {
       emit(const HomeState.error());
     }
